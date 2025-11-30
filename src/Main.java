@@ -11,11 +11,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         SistemaTicketing sistema = new SistemaTicketing();
 
-        // Equipos 
+        // Equipos
         sistema.registrarEquipo(new Equipo(1, "Lab Lis", "PC 01"));
         sistema.registrarEquipo(new Equipo(2, "Lab Lis", "PC 02"));
 
-        // Técnicos 
+        // Técnicos
         sistema.registrarTecnico(new Tecnico(1, "Carlos", "Hardware"));
         sistema.registrarTecnico(new Tecnico(2, "Enrique", "Software"));
         sistema.registrarTecnico(new Tecnico(3, "Emilio", "Redes"));
@@ -29,7 +29,8 @@ public class Main {
             System.out.println("3. Asignar técnico");
             System.out.println("4. Cambiar estado");
             System.out.println("5. Ver historial");
-            System.out.println("6. Salir");
+            System.out.println("6. Mostrar detalles de incidencia"); 
+            System.out.println("7. Salir");
             System.out.print("Escriba una de las opciones del menu: ");
             opcion = sc.nextInt();
 
@@ -113,11 +114,23 @@ public class Main {
                     }
                 }
 
-                case 6 -> System.out.println("Hasta pronto :)");
+                case 6 -> { 
+                    System.out.print("Numero de incidencia: ");
+                    int id6 = sc.nextInt();
 
+                    Incidencia inc6 = sistema.buscarIncidencia(id6);
+
+                    if (inc6 != null) {
+                        inc6.mostrarDetalles(); 
+                    } else {
+                        System.out.println("Incidencia no encontrada.");
+                    }
+                }
+
+                case 7 -> System.out.println("Hasta pronto :)");
             }
 
-        } while (opcion != 0);
+        } while (opcion != 7);
 
         sc.close();
     }
