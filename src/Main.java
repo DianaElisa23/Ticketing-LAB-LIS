@@ -30,7 +30,7 @@ public class Main {
             System.out.println("4. Cambiar estado");
             System.out.println("5. Ver historial");
             System.out.println("6. Salir");
-            System.out.print("Escriba una de las opciones del menú: ");
+            System.out.print("Escriba una de las opciones del menu: ");
             opcion = sc.nextInt();
 
             switch (opcion) {

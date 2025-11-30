@@ -1,6 +1,7 @@
 package modelo;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class RegistroHistorial {
 
@@ -24,5 +25,11 @@ public class RegistroHistorial {
 
     public LocalDateTime getFecha() {
         return fecha;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
+        return fecha.format(formato) + " - " + accion;
     }
 }

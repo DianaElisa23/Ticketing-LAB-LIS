@@ -29,41 +29,15 @@ public class Incidencia {
         registrarHistorial("Incidencia creada por " + usuario.getNombre());
     }
 
-    public int getNumIncidencia() {
-        return numIncidencia;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public TipoIncidencia getTipo() {
-        return tipo;
-    }
-
-    public Prioridad getPrioridad() {
-        return prioridad;
-    }
-
-    public EstadoIncidencia getEstado() {
-        return estado;
-    }
-
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    public Tecnico getTecnicoAsignado() {
-        return tecnicoAsignado;
-    }
-
-    public List<Comentario> getComentarios() {
-        return comentarios;
-    }
-
-    public List<RegistroHistorial> getHistorial() {
-        return historial;
-    }
+    public int getNumIncidencia() { return numIncidencia; }
+    public String getDescripcion() { return descripcion; }
+    public TipoIncidencia getTipo() { return tipo; }
+    public Prioridad getPrioridad() { return prioridad; }
+    public EstadoIncidencia getEstado() { return estado; }
+    public Equipo getEquipo() { return equipo; }
+    public Tecnico getTecnicoAsignado() { return tecnicoAsignado; }
+    public List<Comentario> getComentarios() { return comentarios; }
+    public List<RegistroHistorial> getHistorial() { return historial; }
 
     public void setTipo(TipoIncidencia tipo) {
         this.tipo = tipo;
@@ -92,18 +66,5 @@ public class Incidencia {
 
     private void registrarHistorial(String accion) {
         historial.add(new RegistroHistorial(accion, "Sistema"));
-    }
-
-    public void mostrarDetalles() {
-        System.out.println("\n=== Detalles de Incidencia #" + numIncidencia + " ===");
-        System.out.println("Descripción: " + descripcion);
-        System.out.println("Equipo: " + (equipo != null ? equipo.getDescripcion() : "N/A"));
-        System.out.println("Tipo: " + (tipo != null ? tipo : "No asignado"));
-        System.out.println("Prioridad: " + (prioridad != null ? prioridad : "No asignada"));
-        System.out.println("Estado: " + estado);
-        System.out.println("Técnico asignado: " + 
-            (tecnicoAsignado != null ? tecnicoAsignado.getNombre() : "Ninguno"));
-        System.out.println("Comentarios: " + comentarios.size());
-        System.out.println("Historial: " + historial.size() + " registros");
     }
 }
