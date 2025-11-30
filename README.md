@@ -1,4 +1,4 @@
-# 🎫 Ticketing de Incidencias LAB-LIS  
+# Ticketing de Incidencias LAB-LIS  
 Sistema de gestión de incidencias para el Laboratorio de Cómputo (LAB-LIS)  
 
 ## Descripción 
